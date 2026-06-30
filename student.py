@@ -34,11 +34,6 @@ def delete_student_record(roll_no):
     return False
 
 
-# ==========================================
-#          GUI APPLICATION CLASS
-# ==========================================
-
-
 class SimpleStudentApp:
 
     def __init__(self, root):
@@ -46,7 +41,6 @@ class SimpleStudentApp:
         self.root.title("Student Record Management System")
         self.root.geometry("650x550")
 
-        # --- TITLE ---
         title_lbl = tk.Label(
             root,
             text="STUDENT RECORD MANAGEMENT SYSTEM",
@@ -55,7 +49,6 @@ class SimpleStudentApp:
         )
         title_lbl.pack()
 
-        # --- FRAME FOR INPUT FIELDS ---
         form_frame = tk.LabelFrame(
             root, text=" Student Information Form ", padx=15, pady=10
         )
@@ -128,7 +121,6 @@ class SimpleStudentApp:
             command=self.delete_student,
         ).grid(row=0, column=4, padx=5)
 
-        # --- DISPLAY WINDOW (TEXT BOX WITH SCROLLBAR) ---
         display_frame = tk.LabelFrame(root, text=" Records Display Board ")
         display_frame.pack(pady=10, fill=tk.BOTH, expand=True, padx=20)
 
@@ -146,10 +138,6 @@ class SimpleStudentApp:
         # Show an initial empty state view
         self.clear_form()
         self.view_students()
-
-    # ==========================================
-    #             UI BUTTON ACTIONS
-    # ==========================================
 
     def clear_form(self):
         """Clears text out of all entry widgets"""
